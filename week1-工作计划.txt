@@ -1,0 +1,10 @@
+当前设计：（结构设计类）
+       对EMO的其中一种模块iRMB（包含 Conv和Atten）做改动：删除Conv，对Atten模块采用sliding window（局部window之间产生信息交流），做window attention（局部window内进行特征建模）。
+       backbone由改动后的iRMB-block堆叠而成。
+
+本周计划：
+    1. 调研 token筛选类、简化训练类 工作
+    2. 实验：
+          ① 验证cifar10表现好的模型，imagenet表现是否同样好：  在cifar10上训练EMO模型和当前设计的模型，若模型在cifar和在imagenet上的性能好坏趋势一致，大致可验证，那么后面可做大量的结构设计，用cifar进行筛选。
+          ② (若A800服务器闲置）在当前设计中引入local信息，在ImageNet1k上训练。
+          
